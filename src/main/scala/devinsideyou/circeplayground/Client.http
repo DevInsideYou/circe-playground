@@ -1,0 +1,13 @@
+# This files requires the REST Client VS Code extension
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+curl -d '{"userName": "Alice"}' -H "Content-Type: application/json" -X POST http://localhost:8080/hello
+
+###
+
+POST http://localhost:8080/hello
+Content-Type: application/json
+
+{
+  "userName": "Bob"
+}
