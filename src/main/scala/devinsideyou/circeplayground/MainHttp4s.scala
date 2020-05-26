@@ -27,7 +27,7 @@ object MainHttp4s extends IOApp {
       _ <- IO(printlnHyphens(100))
       _ <- fiber.cancel // Use fiber.join instead of fiber.cancel
       // to make the server wait for your requests instead of exiting early.
-      // You might want to user reStart instead run for that.
+      // You might want to user reStart instead of run for that.
     } yield ExitCode.Success
 
   val server: IO[Nothing] = {
