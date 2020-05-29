@@ -27,13 +27,13 @@ object GreetingRouteServer {
         }
     }
 
-  case class Request(userName: String)
+  final case class Request(userName: String)
   object Request extends HasJsonCodecFor[Request] {
     implicit def entityDecoder[F[_]: Sync]: EntityDecoder[F, Request] = jsonOf
     implicit def entityEncoder[F[_]]: EntityEncoder[F, Request] = jsonEncoderOf
   }
 
-  case class Response(greeting: String)
+  final case class Response(greeting: String)
   object Response extends HasJsonCodecFor[Response] {
     implicit def entityDecoder[F[_]: Sync]: EntityDecoder[F, Response] = jsonOf
     implicit def entityEncoder[F[_]]: EntityEncoder[F, Response] = jsonEncoderOf
